@@ -24,9 +24,15 @@ class _LearnFlutterPageState extends State<LearnFlutterPage> {
       ),
       body: const Column(
         children: [
-          FlutterLogo(
-            size: 350,
-          )
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              FlutterLogo(
+                size: 300,
+              )
+            ],
+          ),
+          Text('Hello world')
         ],
       ),
     );

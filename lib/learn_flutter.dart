@@ -12,6 +12,7 @@ class _LearnFlutterPageState extends State<LearnFlutterPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: const Text('Learn Flutter'),
         automaticallyImplyLeading: false,
         leading: IconButton(
@@ -21,8 +22,12 @@ class _LearnFlutterPageState extends State<LearnFlutterPage> {
           icon: const Icon(Icons.arrow_back_ios_new),
         ),
       ),
-      body: Column(
-        children: [Image.asset('images/einstein.jpg')],
+      body: const Column(
+        children: [
+          FlutterLogo(
+            size: 350,
+          )
+        ],
       ),
     );
   }

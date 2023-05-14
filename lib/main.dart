@@ -32,6 +32,7 @@ class _RootPageState extends State<RootPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Test'),
+        centerTitle: true,
       ),
       body: const HomePage(),
       floatingActionButton: FloatingActionButton(

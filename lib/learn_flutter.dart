@@ -8,7 +8,7 @@ class LearnFlutterPage extends StatefulWidget {
 }
 
 class _LearnFlutterPageState extends State<LearnFlutterPage> {
-  bool isSwitch = false;
+  bool isSwitched = false;
   bool? isChecked = false;
   @override
   Widget build(BuildContext context) {
@@ -60,7 +60,7 @@ class _LearnFlutterPageState extends State<LearnFlutterPage> {
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: isSwitch ? Colors.blue : Colors.orange,
+                backgroundColor: isSwitched ? Colors.blue : Colors.orange,
               ),
               onPressed: () {
                 debugPrint('Elevated button');
@@ -99,13 +99,24 @@ class _LearnFlutterPageState extends State<LearnFlutterPage> {
                 ],
               ),
             ),
-            Switch(
-                value: isSwitch,
-                onChanged: (bool newBool) {
-                  setState(() {
-                    isSwitch = newBool;
-                  });
-                }),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                const Text('No'),
+                Switch(
+                  value: isSwitched,
+                  onChanged: (value) {
+                    setState(() {
+                      isSwitched = value;
+                    });
+                  },
+                  activeColor: Colors.blue,
+                  inactiveThumbColor: Colors.grey,
+                  inactiveTrackColor: Colors.grey.shade200,
+                ),
+                const Text('Yes')
+              ],
+            ),
             Checkbox(
                 value: isChecked,
                 onChanged: (bool? newBool) {
